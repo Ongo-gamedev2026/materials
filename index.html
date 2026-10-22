@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>온고 게임제작반 수업 자료실</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root { --bg:#0d0b1e; --panel:#18153a; --line:#2e2a63; --text:#ecebff; --muted:#9a96c8; --pink:#ff4fa3; --cyan:#3ee6ff; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:"Pretendard",system-ui,sans-serif; line-height:1.6; }
+  header { text-align:center; padding:48px 16px 24px; }
+  h1 { margin:0 0 6px; font-size:clamp(24px,5vw,34px); }
+  h1 span { color:var(--pink); }
+  header p { margin:0; color:var(--muted); }
+  main { max-width:820px; margin:0 auto; padding:0 16px 48px; display:grid; gap:14px; }
+  .week { background:var(--panel); border:2px solid var(--line); padding:16px 18px; }
+  .week h2 { margin:0 0 10px; font-size:17px; }
+  .week h2 b { color:var(--cyan); margin-right:8px; }
+  ul { margin:0; padding:0; list-style:none; display:grid; gap:6px; }
+  li a { display:block; padding:10px 12px; border:1px solid var(--line); text-decoration:none; color:var(--text); }
+  li a:hover { border-color:var(--pink); color:var(--pink); }
+  .none { color:var(--muted); font-size:14px; }
+  footer { text-align:center; color:var(--muted); font-size:12px; padding:0 16px 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📚 수업 <span>자료실</span></h1>
+  <p>온고 게임제작반 2026 · 주차별 학습지와 수업 자료</p>
+</header>
+<main id="list"></main>
+<footer>Ongo-gamedev2026 · materials</footer>
+<script>
+const esc = t => String(t ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+fetch("materials.json", { cache: "no-store" })
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById("list").innerHTML = data.weeks.map(w => `
+      <section class="week">
+        <h2><b>${w.week}주차</b>${esc(w.title)}</h2>
+        ${w.files.length
+          ? `<ul>${w.files.map(f => `<li><a href="week${w.week}/${encodeURIComponent(f.file)}" target="_blank" rel="noopener">📄 ${esc(f.name)}</a></li>`).join("")}</ul>`
+          : `<p class="none">아직 올라온 자료가 없어요.</p>`}
+      </section>`).join("");
+  })
+  .catch(() => {
+    document.getElementById("list").innerHTML = `<p class="none">materials.json을 불러오지 못했어요.</p>`;
+  });
+</script>
+</body>
+</html>
