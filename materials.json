@@ -14,7 +14,16 @@
     {
       "week": 2,
       "title": "관심 게임 이야기 · 게임 기획서 1차 과제",
-      "files": []
+      "files": [
+        {
+          "name": "게임 기획서 1차 과제 (보기·인쇄용 PDF)",
+          "file": "game-plan-week2.pdf"
+        },
+        {
+          "name": "게임 기획서 1차 과제 (워드 원본)",
+          "file": "game-plan-week2.docx"
+        }
+      ]
     },
     {
       "week": 3,
