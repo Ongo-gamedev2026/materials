@@ -1,3 +1,3 @@
 이 폴더에 3주차 자료를 올려요.
 
-- game_view_week3.html: 2주차 기획서 내려받기 · Gemini 기획서 점검 프롬프트 · 게임 화면 시점(뷰) 고르기
+- game_view_week3.html: 게임 화면 시점(뷰) 고르기
