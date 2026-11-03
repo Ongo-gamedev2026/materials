@@ -2,17 +2,17 @@
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI 게임 만들기 | 3주차 자료 · 기획서 점검 · 게임 화면 시점</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><style>:root{font-family:'Pretendard','Noto Sans KR',system-ui,sans-serif;color:#243047;background:#f5f7ff}*{box-sizing:border-box}body{margin:0}.wrap{max-width:950px;margin:auto;padding:28px 18px 70px}.hero{background:linear-gradient(120deg,#6159d9,#478bd7);color:white;border-radius:24px;padding:32px}.hero h1{font-size:clamp(26px,4vw,38px);margin:10px 0}.hero p{margin:0;line-height:1.7}.pill{display:inline-block;background:#ffffff30;padding:6px 12px;border-radius:50px;font-size:13px}.panel{background:white;border:1px solid #e2e6f3;border-radius:20px;padding:24px;margin-top:18px;box-shadow:0 5px 18px #263c6710}h2{font-size:21px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}.muted{color:#65718a;line-height:1.65}.small{font-size:13px}.tag{font-size:12px;background:#e9edff;color:#4b54a7;border-radius:99px;padding:5px 10px}.heading{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.genre{border:1px solid #dce2f0;background:white;border-radius:14px;padding:13px 8px;cursor:pointer;font-size:15px}.genre .emoji{display:block;font-size:26px;margin-bottom:5px}.genre.selected,.game.selected{border:2px solid #6559d9;background:#f1efff}.game-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.game{text-align:left;border:1px solid #dce2f0;background:white;border-radius:14px;padding:16px;cursor:pointer;min-height:105px}.game strong{display:block;margin-bottom:7px}.game small{color:#65718a;line-height:1.6}.level{float:right;font-size:12px;color:#645ad1}.box{background:#f4f6fc;border-radius:13px;padding:16px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere}.tip{position:relative;display:inline-flex;align-items:center;gap:6px;font-weight:700;color:#554cc2;cursor:help;outline:none}.tip .bubble{display:none;position:absolute;z-index:3;top:30px;left:0;width:min(310px,78vw);padding:16px;border-radius:14px;background:#242a47;color:white;box-shadow:0 12px 30px #0003;font-weight:400;font-size:13px;line-height:1.7}.tip:hover .bubble,.tip:focus .bubble,.tip:focus-within .bubble{display:block}.bubble b{color:#d4d1ff}.field{width:100%;border:1px solid #cdd5e5;border-radius:12px;padding:13px;font:inherit;resize:vertical;line-height:1.6}textarea{min-height:90px}.btn{background:#6258d8;border:0;border-radius:12px;color:white;padding:12px 17px;font:inherit;font-weight:700;cursor:pointer}.btn.secondary{background:white;border:1px solid #c9cce6;color:#514bb1}.btn:disabled{opacity:.45;cursor:not-allowed}.actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:12px}.notice{background:#fff9e7;border:1px solid #f0dc9e;border-radius:12px;padding:14px;line-height:1.7}.footer{text-align:center;color:#6d7790;font-size:12px;margin-top:24px}a{color:#5147c3}label{display:block;font-weight:700;margin:15px 0 8px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:600px){.wrap{padding:12px 10px 40px}.hero{padding:24px}.panel{padding:17px}.grid{grid-template-columns:repeat(4,1fr);gap:6px}.genre{font-size:12px;padding:10px 2px}.game-list,.two{grid-template-columns:1fr}.tip .bubble{left:auto;right:-25px}}.page-break-guide{margin:28px auto 4px;text-align:center;color:#67729b;font-size:13px;border-top:2px dashed #d5d9ef;padding-top:16px}.planning-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.choice-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.choice-label{display:flex;align-items:center;gap:6px;padding:10px 8px;border:1px solid #dce2f0;border-radius:10px;font-size:14px;cursor:pointer}.choice-label:has(input:checked){background:#f1efff;border-color:#6559d9}.choice-label input{accent-color:#6258d8}.plan-block{margin:14px 0}.plan-block>p{margin:4px 0 9px}.inline-info{display:flex;gap:12px;align-items:center}.inline-info .field{min-width:0}.plan-checks{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.plan-checks label{margin:0;font-weight:400}.print-only{display:none}.print-line{border-bottom:1px solid #b3bbcc;min-height:25px}.planning-page{scroll-margin-top:20px}@media(max-width:600px){.choice-row{grid-template-columns:repeat(2,1fr)}.inline-info{flex-direction:column;align-items:stretch}}@page{size:A4;margin:13mm}@media print{body{background:white}.wrap{padding:0}.hero{color:#243047;background:#eee}.panel{break-inside:avoid;box-shadow:none}.btn{display:none}.tip .bubble{display:none!important}.page-break-guide{display:none}.planning-page{break-before:page;page-break-before:always}.planning-page.panel{border:0;border-radius:0;box-shadow:none;margin:0;padding:0}.planning-page .field{border:1px solid #b8c2d2;background:white;min-height:48px}.planning-page textarea{min-height:65px}.planning-page .choice-label{padding:7px;font-size:12px}.planning-page .plan-block{margin:11px 0}.planning-page .plan-checks{gap:4px}.planning-page .plan-checks .choice-label{padding:5px 8px}.planning-page .print-only{display:block}.planning-page .planning-header h2{margin:0}.planning-page .muted{margin:5px 0}.planning-page .choice-row{gap:5px}.planning-page .plan-checks{grid-template-columns:repeat(2,1fr)}.planning-page{font-size:13px}.planning-page h3{font-size:14px}.planning-page .print-explain{font-size:11px}body.print-plan-only .wrap > :not(.planning-page){display:none!important}body.print-plan-only .planning-page{break-before:auto;page-break-before:auto}body.print-plan-only .wrap{max-width:100%;padding:0}}</style>
 <style>.view-grid{grid-template-columns:repeat(3,1fr)}.genre small.lv{display:block;margin-top:4px;font-size:11px;font-weight:400}.lv-쉬움{color:#15803d}.lv-보통{color:#b45309}.lv-어려움{color:#be123c}.lv-tag.lv-쉬움{background:#dcfce7}.lv-tag.lv-보통{background:#fef3c7}.lv-tag.lv-어려움{background:#ffe4e6}.view-detail{display:grid;grid-template-columns:1.05fr 1fr;gap:18px;align-items:start;margin-bottom:6px}.view-pic svg{width:100%;height:auto;display:block;border-radius:14px;border:1px solid #e2e6f3;background:white}.view-desc{margin:0 0 12px;line-height:1.75}.facts{display:grid;gap:7px}.facts div{display:grid;grid-template-columns:120px 1fr;gap:8px;background:#f4f6fc;border-radius:10px;padding:9px 12px;font-size:14px}.facts span{color:#65718a}.game{cursor:default}.game-list{grid-template-columns:repeat(3,1fr)}.rec{white-space:normal}.rec-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.q-row{grid-template-columns:repeat(3,minmax(0,1fr))}.plan-preview{max-height:320px;overflow:auto;font-size:13px}.steps{line-height:1.9;padding-left:22px;margin:6px 0 4px}.inline-info select{flex:1}@media(max-width:700px){.view-detail{grid-template-columns:1fr}.game-list{grid-template-columns:1fr}.view-grid{grid-template-columns:repeat(2,1fr)}}</style></head><body><main class="wrap"><header class="hero"><span class="pill">AI 게임 만들기 동아리 · 3주차</span><h1>🛠️ 기획서 점검하고 화면 시점 정하기</h1><p>내 2주차 기획서를 Gemini에게 점검받아 보완하고, 게임 화면을 어느 방향에서 볼지(시점, 뷰) 골라 봅시다.<br>받은 피드백과 고른 뷰는 <b>3주차 개발일지</b>에 적어요.</p></header>
 
-<section class="panel"><div class="heading"><h2>① 내 2주차 기획서 내려받기</h2><span class="tag">먼저 할 일</span></div><p class="muted">내 번호를 고르면 GitHub에 저장된 <b>가장 최근 기획서</b>를 불러와요. 파일로 내려받아 Gemini에 올리거나, 내용을 복사해서 붙여 넣으세요.</p>
+<section class="panel"><div class="heading"><h2>① 내 2주차 기획서 내려받기</h2><span class="tag">먼저 할 일</span></div><p class="muted">내 번호를 고르면 GitHub에 저장된 <b>가장 최근 기획서</b>를 불러와서, 예시와 안내 문장은 빼고 <b>내가 쓴 내용만</b> 칸별로 정리해요. 정리된 기획서는 ② 점검 프롬프트에 자동으로 들어가요.</p>
  <div class="inline-info"><label style="white-space:nowrap;margin:0" for="stuSel">내 번호</label><select id="stuSel" class="field"></select><button class="btn" id="loadPlan">📥 기획서 불러오기</button></div>
  <p id="planMsg" class="muted small" style="margin:10px 0 0"></p>
- <div id="planBox" hidden><label>불러온 기획서 미리보기</label><div id="planPreview" class="box plan-preview"></div>
+ <div id="planBox" hidden><label>정리된 기획서</label><div id="planPreview" class="box plan-preview"></div>
  <div class="actions"><button class="btn secondary" id="copyPlanTxt">📋 내용 복사</button><button class="btn" id="dlPlan">💾 파일로 내려받기 (.txt)</button></div></div>
 </section>
 
-<section class="panel"><div class="heading"><h2>② Gemini에게 기획서 점검받기</h2><span class="tag">코드는 아직 X</span></div><p class="muted">기획서를 Gemini에 올리고 아래 프롬프트를 함께 보내면, <b>고쳐야 할 칸과 더 적어야 할 내용</b>을 알려 줘요. 이번 단계에서는 게임을 만들지 않고 기획서만 점검해요.</p>
- <ol class="steps"><li><a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini 열기 ↗</a> → 새 채팅</li><li><b>＋(파일 추가)</b>로 내려받은 기획서 파일 올리기 <span class="muted small">(파일이 안 올라가면 ①의 <b>내용 복사</b> 후 프롬프트 맨 아래에 붙여 넣기)</span></li><li>아래 프롬프트를 복사해 보내기</li><li>Gemini의 질문에 답하면서 <b>기획서(보완)</b> 탭을 고치고, 받은 피드백은 <b>3주차 개발일지 1️⃣</b>에 적기</li></ol>
+<section class="panel"><div class="heading"><h2>② Gemini에게 기획서 점검받기</h2><span class="tag">코드는 아직 X</span></div><p class="muted">내 기획서가 들어간 아래 프롬프트를 Gemini에 보내면, <b>고쳐야 할 칸과 더 적어야 할 내용</b>을 알려 줘요. 이번 단계에서는 게임을 만들지 않고 기획서만 점검해요.</p>
+ <ol class="steps"><li>①에서 <b>기획서 불러오기</b> → 아래 프롬프트 맨 끝에 내 기획서가 자동으로 붙어요</li><li><a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini 열기 ↗</a> → 새 채팅</li><li><b>점검 프롬프트 복사</b> → Gemini에 붙여 넣고 보내기 <span class="muted small">(파일을 따로 올릴 필요 없어요)</span></li><li>Gemini의 질문에 답하면서 <b>기획서(보완)</b> 탭을 고치고, 받은 피드백은 <b>3주차 개발일지 1️⃣</b>에 적기</li></ol>
  <label>📝 점검 프롬프트</label><div id="reviewPrompt" class="box"></div>
- <div class="actions"><button class="btn" id="copyReview">📋 점검 프롬프트 복사</button></div>
+ <div class="actions"><button class="btn" id="copyReview" disabled>📋 점검 프롬프트 복사 (기획서 포함)</button></div>
  <label>💬 답을 정한 다음 보낼 프롬프트</label><div id="followPrompt" class="box"></div>
  <div class="actions"><button class="btn secondary" id="copyFollow">📋 복사</button></div>
  <p class="notice small">💡 Gemini가 대신 써 준 문장을 그대로 붙이지 말고, <b>내 생각을 내 말로</b> 고쳐 적어요. Gemini의 제안이 내 게임과 다르면 따르지 않아도 돼요.</p>
@@ -162,13 +162,41 @@ function emptyPlan(t){const a=[...t.matchAll(/\*\*답:\*\*[ \t]*(.*)/g)].map(m=>
 $('loadPlan').onclick=async()=>{const repo=$('stuSel').value;if(!repo){$('planMsg').textContent='먼저 내 번호를 골라 주세요.';return}
  $('planMsg').textContent='불러오는 중…';$('planBox').hidden=true;
  try{const r=await fetch(`https://raw.githubusercontent.com/${ORG}/${repo}/main/docs/week2-plan.md?t=${Date.now()}`);if(!r.ok)throw 0;
-  planText=cleanPlan(await r.text());planRepo=repo;$('planPreview').textContent=planText;$('planBox').hidden=false;
-  $('planMsg').innerHTML=emptyPlan(planText)?'⚠️ 기획서가 거의 비어 있어요. <b>학생 사이트 → 3주차 → 작성하기 → 게임 기획서(보완)</b>에서 1~5번을 먼저 채운 뒤 다시 불러오세요.':'✅ 불러왔어요. 파일로 내려받거나 내용을 복사하세요.';
+  const sm=summarizePlan(await r.text());planText=sm.text+'\n';planRepo=repo;$('planPreview').textContent=planText;$('planBox').hidden=false;renderReview();
+  $('planMsg').innerHTML=sm.empty?'⚠️ 기획서가 거의 비어 있어요. <b>학생 사이트 → 3주차 → 작성하기 → 게임 기획서(보완)</b>에서 1~5번을 먼저 채운 뒤 다시 불러오세요.':'✅ 불러왔어요. 아래 ② 점검 프롬프트에 기획서가 자동으로 들어갔어요.';
  }catch(e){$('planMsg').textContent='기획서를 불러오지 못했어요. 인터넷 연결을 확인하고 다시 눌러 주세요.'}};
 $('dlPlan').onclick=()=>{const n=planRepo.replace('game-','');const blob=new Blob(['﻿'+planText],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`2주차_게임기획서_학생${n}.txt`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
 $('copyPlanTxt').onclick=e=>copy(planText,e.currentTarget);
+function summarizePlan(md){
+ const L=md.replace(/\r\n/g,'\n').split('\n');const S={intro:'',target:'',core:'',refs:[],s51:[],s52:[],s53rows:[],s53in:[]};let sec='',tbl=0;
+ const cells=l=>{const s=l.trim().replace(/^\|/,'').replace(/\|\s*$/,'');const o=[];let c='';for(let i=0;i<s.length;i++){if(s[i]==='\\'&&s[i+1]==='|'){c+='|';i++;continue}if(s[i]==='|'){o.push(c);c='';continue}c+=s[i]}o.push(c);return o.map(x=>x.replace(/<br\s*\/?>/gi,' / ').trim())};
+ const clean=t=>t.replace(/\*\*/g,'').replace(/[^\p{L}\p{N}\s()·,./-]/gu,'').replace(/\s+/g,' ').trim();
+ for(const l of L){
+  if(/^#{2,3}\s/.test(l)){tbl=0;sec=/한 문장/.test(l)?'intro':/타깃|타겟/.test(l)?'target':/레퍼런스/.test(l)?'refs':/핵심/.test(l)?'core':/5-1/.test(l)?'s51':/5-2/.test(l)?'s52':/5-3/.test(l)?'s53':(/5️⃣|스테이지 1 만들어/.test(l)?'':sec);continue}
+  let m;
+  if((m=l.match(/^\*\*답:\*\*[ \t]*(.*)$/))&&['intro','target','core'].includes(sec)){S[sec]=m[1].trim();continue}
+  if((m=l.match(/^\s*-\s*\[(x|X)\]\s*(.*)$/))&&sec==='s53'){S.s53in.push(clean(m[2]));continue}
+  if(/^\|/.test(l)){tbl++;if(tbl<=2)continue;const c=cells(l);
+   if(sec==='refs'&&c.some(Boolean))S.refs.push(c);
+   if(sec==='s51')S.s51.push([clean(c[0]),c[1]||'']);
+   if(sec==='s52'&&(c[1]||c[2]||/플레이어/.test(c[0])||clean(c[0])))S.s52.push([clean(c[0])||'(이름 없음)',c[1]||'',c[2]||'']);
+   if(sec==='s53'&&!/^예\s*[:：]/.test(c[0])&&(c[0]||c[1]))S.s53rows.push(c);
+  }else if(l.trim()==='')tbl=tbl;else if(!/^\|/.test(l))tbl=0;
+ }
+ const v=x=>x&&!/^ㅇ+$/.test(x.trim())?x.trim():'(비어 있음)';
+ const out=['[내 게임 기획서]',`1. 한 문장 소개: ${v(S.intro)}`,`2. 타깃 플레이어: ${v(S.target)}`,'3. 레퍼런스 게임:'];
+ out.push(...(S.refs.length?S.refs.map(r=>`   - ${v(r[0])} (장르: ${v(r[1])}) → 참고하고 싶은 점: ${v(r[2])}`):['   - (비어 있음)']));
+ out.push(`4. 핵심 재미 요소: ${v(S.core)}`,'5-1. 스테이지 1에서 일어나는 일:');
+ out.push(...S.s51.map(r=>`   - ${r[0]}: ${v(r[1])}`));
+ out.push('5-2. 스테이지 1에 등장하는 것들:');
+ out.push(...(S.s52.length?S.s52.map(r=>`   - ${r[0]} → 갖고 있는 정보: ${v(r[1])} / 하는 행동·규칙: ${v(r[2])}`):['   - (비어 있음)']));
+ out.push(`5-3. 입력 방식: ${S.s53in.length?S.s53in.join(', '):'(비어 있음)'}`);
+ out.push(...(S.s53rows.length?S.s53rows.map(r=>`   - ${v(r[0])} → ${v(r[1])}`):['   - (비어 있음)']));
+ const filled=[S.intro,S.target,S.core].filter(x=>x&&!/^ㅇ+$/.test(x.trim())).length+S.refs.length+S.s52.filter(r=>r[1]||r[2]).length;
+ return {text:out.join('\n'),empty:filled<2};
+}
 const REVIEW=`너는 고등학생의 첫 게임 기획을 도와주는 게임 기획 멘토야.
-첨부한 파일은 내가 2주차에 쓴 게임 기획서야. 다음 주에 이 기획서를 바탕으로 AI와 함께 "스테이지 1"을 구성요소 하나씩 만들 거야.
+맨 아래 [내 게임 기획서]는 내가 2주차에 쓴 게임 기획서야. "(비어 있음)"은 아직 못 쓴 칸이야. 다음 주에 이 기획서를 바탕으로 AI와 함께 "스테이지 1"을 구성요소 하나씩 만들 거야.
 
 [규칙]
 - 게임 코드는 절대 만들지 마.
@@ -196,7 +224,9 @@ const FOLLOW=`네 질문에 대한 내 답이야.
 3. (내 답)
 
 내 답이 기획서의 어느 칸에 들어가야 하는지 알려 주고, 아직 부족한 부분이 있으면 한 가지만 더 물어봐 줘. 기획서는 대신 써 주지 마.`;
-$('reviewPrompt').textContent=REVIEW;$('followPrompt').textContent=FOLLOW;
-$('copyReview').onclick=e=>copy(planText?REVIEW+'\n\n(파일이 안 올라가면 아래가 내 기획서야)\n'+planText:REVIEW,e.currentTarget);
+const fullReview=()=>REVIEW+'\n\n'+(planText||'[내 게임 기획서]\n(① 에서 기획서를 불러오면 여기에 자동으로 들어가요)');
+function renderReview(){$('reviewPrompt').textContent=fullReview();$('copyReview').disabled=!planText}
+renderReview();$('followPrompt').textContent=FOLLOW;
+$('copyReview').onclick=e=>copy(fullReview(),e.currentTarget);
 $('copyFollow').onclick=e=>copy(FOLLOW,e.currentTarget);
 </script></body></html>
