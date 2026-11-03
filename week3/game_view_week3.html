@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI 게임 만들기 | 3주차 자료 · 게임 화면 시점 고르기</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><style>:root{font-family:'Pretendard','Noto Sans KR',system-ui,sans-serif;color:#243047;background:#f5f7ff}*{box-sizing:border-box}body{margin:0}.wrap{max-width:950px;margin:auto;padding:28px 18px 70px}.hero{background:linear-gradient(120deg,#6159d9,#478bd7);color:white;border-radius:24px;padding:32px}.hero h1{font-size:clamp(26px,4vw,38px);margin:10px 0}.hero p{margin:0;line-height:1.7}.pill{display:inline-block;background:#ffffff30;padding:6px 12px;border-radius:50px;font-size:13px}.panel{background:white;border:1px solid #e2e6f3;border-radius:20px;padding:24px;margin-top:18px;box-shadow:0 5px 18px #263c6710}h2{font-size:21px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}.muted{color:#65718a;line-height:1.65}.small{font-size:13px}.tag{font-size:12px;background:#e9edff;color:#4b54a7;border-radius:99px;padding:5px 10px}.heading{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.genre{border:1px solid #dce2f0;background:white;border-radius:14px;padding:13px 8px;cursor:pointer;font-size:15px}.genre .emoji{display:block;font-size:26px;margin-bottom:5px}.genre.selected,.game.selected{border:2px solid #6559d9;background:#f1efff}.game-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.game{text-align:left;border:1px solid #dce2f0;background:white;border-radius:14px;padding:16px;cursor:pointer;min-height:105px}.game strong{display:block;margin-bottom:7px}.game small{color:#65718a;line-height:1.6}.level{float:right;font-size:12px;color:#645ad1}.box{background:#f4f6fc;border-radius:13px;padding:16px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere}.tip{position:relative;display:inline-flex;align-items:center;gap:6px;font-weight:700;color:#554cc2;cursor:help;outline:none}.tip .bubble{display:none;position:absolute;z-index:3;top:30px;left:0;width:min(310px,78vw);padding:16px;border-radius:14px;background:#242a47;color:white;box-shadow:0 12px 30px #0003;font-weight:400;font-size:13px;line-height:1.7}.tip:hover .bubble,.tip:focus .bubble,.tip:focus-within .bubble{display:block}.bubble b{color:#d4d1ff}.field{width:100%;border:1px solid #cdd5e5;border-radius:12px;padding:13px;font:inherit;resize:vertical;line-height:1.6}textarea{min-height:90px}.btn{background:#6258d8;border:0;border-radius:12px;color:white;padding:12px 17px;font:inherit;font-weight:700;cursor:pointer}.btn.secondary{background:white;border:1px solid #c9cce6;color:#514bb1}.btn:disabled{opacity:.45;cursor:not-allowed}.actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:12px}.notice{background:#fff9e7;border:1px solid #f0dc9e;border-radius:12px;padding:14px;line-height:1.7}.footer{text-align:center;color:#6d7790;font-size:12px;margin-top:24px}a{color:#5147c3}label{display:block;font-weight:700;margin:15px 0 8px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:600px){.wrap{padding:12px 10px 40px}.hero{padding:24px}.panel{padding:17px}.grid{grid-template-columns:repeat(4,1fr);gap:6px}.genre{font-size:12px;padding:10px 2px}.game-list,.two{grid-template-columns:1fr}.tip .bubble{left:auto;right:-25px}}.page-break-guide{margin:28px auto 4px;text-align:center;color:#67729b;font-size:13px;border-top:2px dashed #d5d9ef;padding-top:16px}.planning-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.choice-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.choice-label{display:flex;align-items:center;gap:6px;padding:10px 8px;border:1px solid #dce2f0;border-radius:10px;font-size:14px;cursor:pointer}.choice-label:has(input:checked){background:#f1efff;border-color:#6559d9}.choice-label input{accent-color:#6258d8}.plan-block{margin:14px 0}.plan-block>p{margin:4px 0 9px}.inline-info{display:flex;gap:12px;align-items:center}.inline-info .field{min-width:0}.plan-checks{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.plan-checks label{margin:0;font-weight:400}.print-only{display:none}.print-line{border-bottom:1px solid #b3bbcc;min-height:25px}.planning-page{scroll-margin-top:20px}@media(max-width:600px){.choice-row{grid-template-columns:repeat(2,1fr)}.inline-info{flex-direction:column;align-items:stretch}}@page{size:A4;margin:13mm}@media print{body{background:white}.wrap{padding:0}.hero{color:#243047;background:#eee}.panel{break-inside:avoid;box-shadow:none}.btn{display:none}.tip .bubble{display:none!important}.page-break-guide{display:none}.planning-page{break-before:page;page-break-before:always}.planning-page.panel{border:0;border-radius:0;box-shadow:none;margin:0;padding:0}.planning-page .field{border:1px solid #b8c2d2;background:white;min-height:48px}.planning-page textarea{min-height:65px}.planning-page .choice-label{padding:7px;font-size:12px}.planning-page .plan-block{margin:11px 0}.planning-page .plan-checks{gap:4px}.planning-page .plan-checks .choice-label{padding:5px 8px}.planning-page .print-only{display:block}.planning-page .planning-header h2{margin:0}.planning-page .muted{margin:5px 0}.planning-page .choice-row{gap:5px}.planning-page .plan-checks{grid-template-columns:repeat(2,1fr)}.planning-page{font-size:13px}.planning-page h3{font-size:14px}.planning-page .print-explain{font-size:11px}body.print-plan-only .wrap > :not(.planning-page){display:none!important}body.print-plan-only .planning-page{break-before:auto;page-break-before:auto}body.print-plan-only .wrap{max-width:100%;padding:0}}</style>
+<style>.view-grid{grid-template-columns:repeat(3,1fr)}.genre small.lv{display:block;margin-top:4px;font-size:11px;font-weight:400}.lv-쉬움{color:#15803d}.lv-보통{color:#b45309}.lv-어려움{color:#be123c}.lv-tag.lv-쉬움{background:#dcfce7}.lv-tag.lv-보통{background:#fef3c7}.lv-tag.lv-어려움{background:#ffe4e6}.view-detail{display:grid;grid-template-columns:1.05fr 1fr;gap:18px;align-items:start;margin-bottom:6px}.view-pic svg{width:100%;height:auto;display:block;border-radius:14px;border:1px solid #e2e6f3;background:white}.view-desc{margin:0 0 12px;line-height:1.75}.facts{display:grid;gap:7px}.facts div{display:grid;grid-template-columns:120px 1fr;gap:8px;background:#f4f6fc;border-radius:10px;padding:9px 12px;font-size:14px}.facts span{color:#65718a}.game{cursor:default}.game-list{grid-template-columns:repeat(3,1fr)}.rec{white-space:normal}.rec-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.q-row{grid-template-columns:repeat(3,minmax(0,1fr))}@media(max-width:700px){.view-detail{grid-template-columns:1fr}.game-list{grid-template-columns:1fr}.view-grid{grid-template-columns:repeat(2,1fr)}}@media print{.view-grid .genre{padding:6px}}</style></head><body><main class="wrap"><header class="hero"><span class="pill">AI 게임 만들기 동아리 · 3주차</span><h1>🎥 내 게임은 어디서 보일까?</h1><p>게임 화면을 어느 방향에서 보는지(시점, 뷰)를 알아보고, 내 게임에 맞는 뷰를 골라 봅시다.<br>고른 뷰는 <b>3주차 개발일지</b>에 적고, Gemini 첫 메시지에도 넣어요.</p></header>
+
+<section class="panel"><div class="heading"><h2>① 게임 뷰(시점)란?</h2><span class="tag">먼저 읽어요</span></div><p class="muted">게임 뷰는 <b>카메라가 어디에서 게임 세상을 비추는지</b>를 말해요. 같은 "오리가 소를 피하는 게임"도 위에서 보면 사방으로 도망치는 게임이 되고, 옆에서 보면 점프로 피하는 게임이 돼요.<br>뷰가 정해지면 <b>캐릭터가 움직이는 방향, 중력이 있는지, 화면이 따라가는지</b>가 함께 정해져요.</p><div class="tip" tabindex="0" role="button" aria-label="왜 뷰부터 정할까? 설명 보기">💡 왜 뷰부터 정해야 할까? ⓘ<div class="bubble">Gemini에게 뷰를 말하지 않으면 AI가 마음대로 정해요.<br><br>처음엔 탑다운으로 만들었다가 나중에 사이드뷰로 바꾸려면 <b>이동·충돌·배경을 거의 다시 만들어야</b> 해요.<br><br>그래서 구성요소 1번 <b>화면·배경</b>을 만들 때 뷰를 같이 정해요.</div></div></section>
+
+<section class="panel"><h2>② 뷰 골라 보기</h2><p class="muted">버튼을 눌러 각 뷰의 모습과 예시 게임을 확인해 보세요.</p><div id="views" class="grid view-grid"></div></section>
+
+<section class="panel"><div class="heading"><h2 id="vTitle">③</h2><span id="vLevel" class="tag"></span></div>
+ <div class="view-detail">
+  <div class="view-pic" id="vPic"></div>
+  <div>
+   <p id="vDesc" class="view-desc"></p>
+   <div class="facts">
+    <div><span>🧭 움직이는 방향</span><b id="vMove"></b></div>
+    <div><span>🌍 중력</span><b id="vGravity"></b></div>
+    <div><span>📷 화면(카메라)</span><b id="vCam"></b></div>
+    <div><span>🎮 잘 맞는 조작</span><b id="vCtrl"></b></div>
+    <div><span>🏷️ 잘 맞는 장르</span><b id="vGenre"></b></div>
+   </div>
+  </div>
+ </div>
+ <label>🎮 이 뷰를 쓰는 예시 게임</label><div id="vGames" class="game-list"></div>
+ <p id="vWarn" class="notice small" hidden></p>
+</section>
+
+<section class="panel"><h2>④ 내 게임에 맞는 뷰 찾기</h2><p class="muted">내 2주차 기획서를 떠올리며 답해 보세요. 어울리는 뷰를 추천해 줘요.</p>
+ <div class="plan-block"><h3>1. 캐릭터가 점프하거나 떨어지나요? (중력이 있나요?)</h3><div class="choice-row q-row" data-q="g"></div></div>
+ <div class="plan-block"><h3>2. 캐릭터가 위·아래·왼쪽·오른쪽 어디로든 걸어 다니나요?</h3><div class="choice-row q-row" data-q="m"></div></div>
+ <div class="plan-block"><h3>3. 맵이 화면보다 커서 화면이 캐릭터를 따라가나요?</h3><div class="choice-row q-row" data-q="c"></div></div>
+ <div id="rec" class="box rec">질문에 답하면 추천 뷰가 여기에 나와요.</div>
+</section>
+
+<section class="panel"><h2>⑤ 고른 뷰를 Gemini와 개발일지에 넣기</h2>
+ <p class="muted">②에서 고른 뷰로 문장이 자동으로 만들어져요. 3주차 개발일지의 <b>Gemini 첫 번째 메시지</b>에 이 문장을 함께 붙여 넣으세요.</p>
+ <label>Gemini에 넣을 문장</label><div id="vPrompt" class="box"></div>
+ <div class="actions"><button class="btn" id="copyPrompt">📋 문장 복사</button></div>
+ <label for="why">이 뷰를 고른 이유 (개발일지에 적을 내용)</label><textarea id="why" class="field" placeholder="예: 오리가 사방으로 도망치면서 마우스로 돌을 던져야 해서 위에서 보는 게 편하다."></textarea>
+ <label>개발일지에 붙여 넣을 내용</label><div id="vLog" class="box"></div>
+ <div class="actions"><button class="btn secondary" id="copyLog">📋 개발일지용 복사</button></div>
+ <p class="notice small">📝 <b>개발일지 작성 순서:</b> 학생 사이트 → 3주차 → 내 번호 → <b>✏️ 작성하기</b> → <b>3주차 개발일지</b> 탭 → <b>2️⃣ 내 게임의 화면 시점</b> 칸에 붙여 넣어요.</p>
+</section>
+<div class="footer">AI 게임 만들기 · 3주차 자료 · 게임 화면 시점(뷰) 고르기</div></main>
+<script>
+const $=id=>document.getElementById(id);
+const P={bg:'#eef2ff',line:'#c9d1ea',pl:'#6258d8',en:'#e2576b',it:'#f2b33d',gr:'#7cc47f',sky:'#dbeafe'};
+const pics={
+top:`<svg viewBox="0 0 320 200" role="img" aria-label="위에서 내려다본 방 그림"><rect x="10" y="10" width="300" height="180" rx="14" fill="${P.gr}" opacity=".35"/>
+${[...Array(9)].map((_,i)=>`<line x1="${10+i*37.5}" y1="10" x2="${10+i*37.5}" y2="190" stroke="#fff" stroke-opacity=".5"/>`).join('')}${[...Array(5)].map((_,i)=>`<line x1="10" y1="${10+i*45}" x2="310" y2="${10+i*45}" stroke="#fff" stroke-opacity=".5"/>`).join('')}
+<circle cx="160" cy="100" r="15" fill="${P.pl}"/><circle cx="160" cy="100" r="5" fill="#fff"/>
+<g stroke="${P.pl}" stroke-width="3" fill="none" marker-end="url(#a)"><path d="M160 80 V52"/><path d="M160 120 V148"/><path d="M140 100 H108"/><path d="M180 100 H212"/></g>
+<circle cx="60" cy="45" r="12" fill="${P.en}"/><circle cx="265" cy="160" r="12" fill="${P.en}"/><rect x="250" y="35" width="18" height="18" rx="4" fill="${P.it}"/>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="${P.pl}"/></marker></defs>
+<text x="160" y="186" text-anchor="middle" font-size="12" fill="#43507a">📷 카메라: 머리 위</text></svg>`,
+side:`<svg viewBox="0 0 320 200" role="img" aria-label="옆에서 본 플랫폼 그림"><rect x="10" y="10" width="300" height="180" rx="14" fill="${P.sky}"/>
+<rect x="10" y="160" width="300" height="30" fill="${P.gr}"/><rect x="150" y="112" width="70" height="12" rx="4" fill="#a3896b"/><rect x="245" y="78" width="55" height="12" rx="4" fill="#a3896b"/>
+<rect x="55" y="128" width="22" height="32" rx="6" fill="${P.pl}"/><path d="M80 130 Q120 60 165 108" stroke="${P.pl}" stroke-width="3" stroke-dasharray="6 5" fill="none"/>
+<rect x="255" y="140" width="20" height="20" rx="4" fill="${P.en}"/><circle cx="272" cy="64" r="8" fill="${P.it}"/>
+<path d="M30 40 H120" stroke="#43507a" stroke-width="2" marker-end="url(#b)"/><text x="30" y="32" font-size="12" fill="#43507a">화면이 옆으로 따라가요</text>
+<defs><marker id="b" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#43507a"/></marker></defs>
+<text x="160" y="182" text-anchor="middle" font-size="12" fill="#fff">📷 카메라: 옆에서</text></svg>`,
+vert:`<svg viewBox="0 0 320 200" role="img" aria-label="세로로 긴 맵 그림"><rect x="90" y="10" width="140" height="180" rx="14" fill="${P.sky}"/>
+<rect x="100" y="165" width="120" height="14" rx="4" fill="${P.gr}"/><rect x="170" y="128" width="45" height="10" rx="4" fill="#a3896b"/><rect x="105" y="92" width="45" height="10" rx="4" fill="#a3896b"/><rect x="160" y="55" width="45" height="10" rx="4" fill="#a3896b"/>
+<path d="M190 30 l0 -12" stroke="#c2410c" stroke-width="2"/><path d="M190 18 l14 5 l-14 5z" fill="#ef4444"/>
+<rect x="120" y="140" width="18" height="25" rx="5" fill="${P.pl}"/><path d="M140 145 Q170 100 185 126" stroke="${P.pl}" stroke-width="3" stroke-dasharray="6 5" fill="none"/>
+<path d="M265 160 V40" stroke="#43507a" stroke-width="2" marker-end="url(#c)"/><text x="250" y="180" font-size="12" fill="#43507a">위로 올라가요</text>
+<defs><marker id="c" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#43507a"/></marker></defs>
+<text x="40" y="100" font-size="12" fill="#43507a" text-anchor="middle">📷 옆에서</text></svg>`,
+fixed:`<svg viewBox="0 0 320 200" role="img" aria-label="움직이지 않는 한 화면 그림"><rect x="10" y="10" width="300" height="180" rx="14" fill="#fff" stroke="${P.pl}" stroke-width="4"/>
+<path d="M30 60 H200 V110 H90 V160 H290" stroke="#e7d7b5" stroke-width="22" fill="none" stroke-linejoin="round"/>
+<circle cx="45" cy="60" r="9" fill="${P.en}"/><circle cx="75" cy="60" r="9" fill="${P.en}"/><rect x="270" y="140" width="34" height="38" rx="6" fill="#94a3b8"/>
+<rect x="120" y="78" width="20" height="20" rx="4" fill="${P.pl}"/><rect x="210" y="125" width="20" height="20" rx="4" fill="${P.pl}"/><circle cx="130" cy="88" r="38" fill="${P.pl}" opacity=".1"/>
+<text x="250" y="40" font-size="20">🔒</text><text x="160" y="40" text-anchor="middle" font-size="12" fill="#43507a">📷 카메라: 고정 (움직이지 않음)</text></svg>`,
+quarter:`<svg viewBox="0 0 320 200" role="img" aria-label="비스듬히 내려다본 마름모 바닥 그림"><rect x="10" y="10" width="300" height="180" rx="14" fill="#f1f5f9"/>
+${(()=>{let s='';for(let r=0;r<4;r++)for(let c=0;c<4;c++){const x=160+(c-r)*32,y=55+(c+r)*16;s+=`<path d="M${x} ${y} l32 16 l-32 16 l-32 -16z" fill="${(r+c)%2?'#bfe3c0':'#a7d8a9'}" stroke="#fff"/>`}return s})()}
+<rect x="210" y="70" width="26" height="20" fill="#cbd5e1"/><path d="M210 70 l13 -7 l13 7z" fill="#94a3b8"/>
+<ellipse cx="160" cy="120" rx="12" ry="5" fill="#0002"/><rect x="152" y="94" width="16" height="26" rx="6" fill="${P.pl}"/>
+<ellipse cx="110" cy="128" rx="10" ry="4" fill="#0002"/><rect x="103" y="108" width="14" height="20" rx="5" fill="${P.en}"/>
+<text x="160" y="186" text-anchor="middle" font-size="12" fill="#43507a">📷 카메라: 비스듬히 위에서</text></svg>`,
+d3:`<svg viewBox="0 0 320 200" role="img" aria-label="원근감 있는 3D 공간 그림"><rect x="10" y="10" width="300" height="180" rx="14" fill="${P.sky}"/>
+<path d="M10 120 H310 V190 H10z" fill="${P.gr}" opacity=".6"/>${[-3,-2,-1,0,1,2,3].map(i=>`<line x1="160" y1="120" x2="${160+i*70}" y2="190" stroke="#fff" stroke-opacity=".6"/>`).join('')}
+<rect x="190" y="88" width="16" height="32" fill="#94a3b8"/><rect x="100" y="96" width="10" height="24" fill="#94a3b8"/>
+<rect x="148" y="132" width="26" height="44" rx="8" fill="${P.pl}"/><circle cx="161" cy="124" r="11" fill="${P.pl}"/>
+<text x="160" y="36" text-anchor="middle" font-size="12" fill="#43507a">📷 캐릭터 등 뒤(3인칭) 또는 눈(1인칭)</text></svg>`
+};
+const views=[
+{k:'top',emoji:'🗺️',name:'탑다운 뷰',level:'쉬움',desc:'게임 세상을 바로 위에서 내려다보는 시점이에요. 캐릭터가 위·아래·왼쪽·오른쪽 어디로든 걸어 다닐 수 있고, 떨어지는 중력이 없어요.',move:'상·하·좌·우 + 대각선',gravity:'없음',cam:'한 방에 고정하거나 캐릭터를 따라가요',ctrl:'WASD·방향키 이동 + 마우스 조준',genre:'액션, 슈팅, 로그라이크, 어드벤처',
+ games:[['아이작 (The Binding of Isaac)','방 하나를 위에서 내려다보며 사방에서 다가오는 몬스터를 눈물로 공격해요.'],['뱀파이어 서바이버','위에서 보며 사방에서 몰려오는 적을 피해 다니고 무기가 자동으로 공격해요.'],['젤다의 전설 (고전 버전)','위에서 본 맵을 돌아다니며 동굴과 던전을 탐험해요.']],
+ prompt:'게임 화면은 탑다운 뷰(위에서 내려다보는 시점)로 만들어줘. 캐릭터는 상하좌우로 자유롭게 움직이고 중력은 없어.'},
+{k:'side',emoji:'➡️',name:'사이드뷰 (횡스크롤)',level:'쉬움',desc:'게임 세상을 옆에서 보는 시점이에요. 중력이 있어서 점프하면 다시 떨어지고, 캐릭터가 앞으로 가면 화면이 옆으로 따라가요.',move:'왼쪽·오른쪽 + 점프',gravity:'있음 (점프하면 떨어져요)',cam:'캐릭터를 따라 옆으로 움직여요',ctrl:'A·D 또는 ←→ 이동 + 스페이스 점프',genre:'플랫포머, 액션, 러너',
+ games:[['슈퍼 마리오 브라더스','오른쪽으로 달리며 점프로 구멍과 적을 넘고 깃발까지 가요.'],['산나비','옆에서 보며 사슬 팔로 매달리고 날아다니는 빠른 액션 게임이에요.'],['메이플스토리','옆에서 보는 맵에서 점프와 사다리로 이동하며 몬스터를 사냥해요.']],
+ prompt:'게임 화면은 사이드뷰(옆에서 보는 횡스크롤 시점)로 만들어줘. 중력이 있어서 점프하면 다시 떨어지고, 캐릭터가 앞으로 가면 화면이 옆으로 따라 움직여.'},
+{k:'vert',emoji:'⬆️',name:'세로 스크롤',level:'보통',desc:'옆에서 보는 시점이지만 맵이 세로로 길어서 위로 올라가는 게임이에요. 높이 올라갈수록 화면도 위로 따라가요. 떨어지면 아래로 다시 내려가요.',move:'좌우 + 점프로 위로 올라가요',gravity:'있음',cam:'위로 따라가거나, 한 화면씩 넘어가요',ctrl:'점프 방향·세기 조절 (키보드·마우스)',genre:'플랫포머, 등반, 캐주얼',
+ games:[['점프 킹 (Jump King)','점프 세기를 모아 위로 올라가요. 화면이 한 칸씩 넘어가고, 떨어지면 아래 화면으로 돌아가요.'],['항아리 게임 (Getting Over It)','망치로 산을 오르는 게임이에요. 화면이 캐릭터를 따라 부드럽게 움직여요.'],['두들 점프','발판을 밟으며 끝없이 위로 올라가요. 화면이 위로만 따라 올라가요.']],
+ prompt:'게임 화면은 옆에서 보는 시점이고 맵은 세로로 길게 만들어줘. 중력이 있고, 플레이어가 위로 올라가면 화면도 위로 따라 올라가.'},
+{k:'fixed',emoji:'🖼️',name:'고정 한 화면',level:'쉬움',desc:'카메라가 움직이지 않고 게임 전체가 한 화면 안에서 일어나요. 맵 전체가 항상 다 보여서 만들기가 가장 쉬워요. 위에서 보든 옆에서 보든 화면만 고정하면 돼요.',move:'게임마다 달라요',gravity:'게임마다 달라요',cam:'움직이지 않아요',ctrl:'마우스 클릭, 방향키',genre:'퍼즐, 타워 디펜스, 아케이드',
+ games:[['테트리스','한 화면 안에서 떨어지는 블록을 쌓아 줄을 지워요.'],['팩맨','한 화면짜리 미로에서 유령을 피하며 점을 먹어요.'],['킹덤 러시','맵 전체를 한눈에 보면서 길 옆에 타워를 설치해 적을 막아요.']],
+ prompt:'게임 화면은 움직이지 않는 고정된 한 화면으로 만들어줘. 맵 전체가 한 화면 안에 다 보여.'},
+{k:'quarter',emoji:'💎',name:'쿼터뷰 (아이소메트릭)',level:'보통',desc:'비스듬히 위에서 내려다보는 시점이에요. 바닥이 마름모 모양으로 보이고, 탑다운보다 입체감이 있어요.',move:'사방 (바닥이 비스듬해요)',gravity:'없음',cam:'캐릭터를 따라가거나 고정',ctrl:'마우스 클릭 이동 또는 WASD',genre:'RPG, 전략, 액션',
+ games:[['하데스 (Hades)','비스듬히 내려다보는 방에서 무기와 능력으로 싸우는 액션 로그라이크예요.'],['디아블로','비스듬한 시점의 던전에서 마우스로 이동하며 몬스터를 사냥해요.'],['리그 오브 레전드','비스듬히 내려다보는 맵에서 마우스로 챔피언을 움직여요.']],
+ warn:'⚠️ 바닥을 마름모로 그리려면 위치 계산이 탑다운보다 복잡해서 오류가 나기 쉬워요. <b>탑다운으로 먼저 만든 다음</b> 그림만 비스듬하게 바꿔 달라고 하는 방법도 있어요.',
+ prompt:'게임 화면은 쿼터뷰(비스듬히 위에서 내려다보는 아이소메트릭 시점)로 만들어줘. 바닥은 마름모 타일이고 중력은 없어.'},
+{k:'d3',emoji:'🎥',name:'3D 시점 (1인칭·3인칭)',level:'어려움',desc:'입체 공간 안에서 캐릭터의 눈(1인칭)이나 등 뒤(3인칭)에서 보는 시점이에요. 마우스로 고개를 돌려 주변을 볼 수 있어요.',move:'3D 공간에서 앞·뒤·좌·우',gravity:'있음',cam:'캐릭터의 눈 또는 등 뒤',ctrl:'WASD 이동 + 마우스로 시점 돌리기',genre:'FPS, 오픈월드, 생존',
+ games:[['마인크래프트','1인칭으로 블록 세상을 돌아다니며 짓고 부숴요. 3인칭으로 바꿀 수도 있어요.'],['배틀그라운드','캐릭터 등 뒤에서 보는 3인칭으로 넓은 맵에서 살아남아요.'],['포트나이트','3인칭 시점으로 싸우면서 건물을 지어요.']],
+ warn:'⚠️ HTML 한 파일로 3D 게임을 만들려면 Three.js 같은 라이브러리가 필요하고 오류가 많이 나요. 이번 과정에서는 <b>2D 뷰(탑다운·사이드뷰·고정 화면)를 추천</b>해요.',
+ prompt:'게임은 Three.js를 사용한 3D로 만들고, 캐릭터 등 뒤에서 보는 3인칭 시점으로 만들어줘. WASD로 이동하고 마우스로 시점을 돌려.'}
+];
+let vi=0;
+function draw(){
+ const v=views[vi];
+ $('views').innerHTML=views.map((x,i)=>`<button type="button" class="genre ${i===vi?'selected':''}" data-vi="${i}" aria-pressed="${i===vi}"><span class="emoji">${x.emoji}</span>${x.name}<small class="lv lv-${x.level}">${x.level}</small></button>`).join('');
+ $('vTitle').textContent=`③ ${v.emoji} ${v.name}`; $('vLevel').textContent='만들기 난이도: '+v.level; $('vLevel').className='tag lv-tag lv-'+v.level;
+ $('vPic').innerHTML=pics[v.k]; $('vDesc').textContent=v.desc;
+ $('vMove').textContent=v.move;$('vGravity').textContent=v.gravity;$('vCam').textContent=v.cam;$('vCtrl').textContent=v.ctrl;$('vGenre').textContent=v.genre;
+ $('vGames').innerHTML=v.games.map(g=>`<div class="game"><strong>${g[0]}</strong><small>${g[1]}</small></div>`).join('');
+ const w=$('vWarn'); if(v.warn){w.innerHTML=v.warn;w.hidden=false}else w.hidden=true;
+ render();
+}
+const logText=()=>`화면 시점: ${views[vi].name}\n고른 이유: ${$('why').value.trim()}`;
+function render(){$('vPrompt').textContent=views[vi].prompt;$('vLog').textContent=logText()}
+$('views').addEventListener('click',e=>{const b=e.target.closest('[data-vi]');if(b){vi=+b.dataset.vi;draw()}});
+$('why').addEventListener('input',render);
+async function copy(s,b){try{await navigator.clipboard.writeText(s)}catch(e){const t=document.createElement('textarea');t.value=s;document.body.append(t);t.select();document.execCommand('copy');t.remove()}const o=b.textContent;b.textContent='✓ 복사 완료!';setTimeout(()=>b.textContent=o,1500)}
+$('copyPrompt').onclick=e=>copy(views[vi].prompt,e.currentTarget);
+$('copyLog').onclick=e=>copy(logText(),e.currentTarget);
+// ④ 추천
+const ans={};
+document.querySelectorAll('.q-row').forEach(r=>{const q=r.dataset.q;r.innerHTML=['예','아니오','잘 모르겠어요'].map(a=>`<label class="choice-label"><input type="radio" name="q${q}" value="${a}">${a}</label>`).join('');r.addEventListener('change',e=>{ans[q]=e.target.value;recommend()})});
+function recommend(){
+ const {g,m,c}=ans; if(!g){$('rec').textContent='1번 질문부터 답해 보세요.';return}
+ let ks=[],why='';
+ if(g==='예'){ks=c==='아니오'?['fixed','side']:['side','vert'];why=c==='아니오'?'중력이 있고 화면이 움직이지 않으면 <b>옆에서 본 고정 한 화면</b>이 가장 쉬워요.':'중력이 있으면 <b>옆에서 보는 뷰</b>가 어울려요. 오른쪽으로 가면 사이드뷰, 위로 올라가면 세로 스크롤이에요.'}
+ else if(g==='아니오'){ if(m==='아니오'){ks=['fixed'];why='캐릭터가 걸어 다니지 않으면(설치·클릭·퍼즐 중심) <b>고정 한 화면</b>이 잘 맞아요.'} else {ks=c==='아니오'?['top','fixed']:['top','quarter'];why=c==='아니오'?'사방으로 움직이고 화면이 고정이면 <b>위에서 본 한 화면</b>(예: 아이작의 방 하나)이 좋아요.':'중력 없이 사방으로 움직이면 <b>탑다운 뷰</b>가 가장 잘 맞아요. 입체감을 원하면 쿼터뷰도 있어요.'} }
+ else {ks=['top','side'];why='중력이 있는지부터 정해 보세요. 점프가 있으면 사이드뷰, 없으면 탑다운이에요.'}
+ $('rec').innerHTML=`<div>${why}</div><div class="rec-btns">${ks.map(k=>{const i=views.findIndex(v=>v.k===k);return `<button type="button" class="btn secondary" data-go="${i}">${views[i].emoji} ${views[i].name} 보기</button>`}).join('')}</div>`;
+}
+$('rec').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b){vi=+b.dataset.go;draw();$('vTitle').scrollIntoView({behavior:'smooth',block:'start'})}});
+draw();
+</script></body></html>

@@ -28,7 +28,12 @@
     {
       "week": 3,
       "title": "기획서 피드백 및 구체화 (튜팅)",
-      "files": []
+      "files": [
+        {
+          "name": "3주차 자료 · 게임 화면 시점(뷰) 고르기",
+          "file": "game_view_week3.html"
+        }
+      ]
     },
     {
       "week": 4,
