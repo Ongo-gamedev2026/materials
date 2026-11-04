@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI 게임 만들기 | 5주차 자료 · 패치노트와 플레이 소감 쓰는 법</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><style>:root{font-family:'Pretendard','Noto Sans KR',system-ui,sans-serif;color:#243047;background:#f5f7ff}*{box-sizing:border-box}body{margin:0}.wrap{max-width:950px;margin:auto;padding:28px 18px 70px}.hero{background:linear-gradient(120deg,#6159d9,#478bd7);color:white;border-radius:24px;padding:32px}.hero h1{font-size:clamp(26px,4vw,38px);margin:10px 0}.hero p{margin:0;line-height:1.7}.pill{display:inline-block;background:#ffffff30;padding:6px 12px;border-radius:50px;font-size:13px}.panel{background:white;border:1px solid #e2e6f3;border-radius:20px;padding:24px;margin-top:18px;box-shadow:0 5px 18px #263c6710}h2{font-size:21px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}.muted{color:#65718a;line-height:1.65}.small{font-size:13px}.tag{font-size:12px;background:#e9edff;color:#4b54a7;border-radius:99px;padding:5px 10px}.heading{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.box{background:#f4f6fc;border-radius:13px;padding:16px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere}.field{width:100%;border:1px solid #cdd5e5;border-radius:12px;padding:13px;font:inherit;resize:vertical;line-height:1.6}textarea{min-height:90px}.btn{background:#6258d8;border:0;border-radius:12px;color:white;padding:12px 17px;font:inherit;font-weight:700;cursor:pointer}.btn.secondary{background:white;border:1px solid #c9cce6;color:#514bb1}.actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:12px}.notice{background:#fff9e7;border:1px solid #f0dc9e;border-radius:12px;padding:14px;line-height:1.7}.footer{text-align:center;color:#6d7790;font-size:12px;margin-top:24px}a{color:#5147c3}label{display:block;font-weight:700;margin:15px 0 8px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;counter-reset:s}.flow div{background:#f4f6fc;border-radius:14px;padding:12px 8px;text-align:center;font-size:13.5px;line-height:1.45;position:relative}.flow div b{display:block;font-size:24px;margin-bottom:4px}.flow div::before{counter-increment:s;content:counter(s);position:absolute;top:6px;left:8px;font-size:11px;font-weight:800;color:#6258d8}
+.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.chk{border:1px solid #dce2f0;border-radius:14px;padding:12px 14px;cursor:pointer;background:white;text-align:left;font:inherit;line-height:1.5}.chk b{display:block;margin-bottom:3px}.chk small{color:#65718a}.chk.on{border:2px solid #22a35a;background:#effcf4}.chk.on b::after{content:" ✅"}.meter{height:12px;background:#e9edff;border-radius:99px;overflow:hidden;margin:14px 0 6px}.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6258d8,#22a35a);transition:width .3s}
+.pn{background:#151233;color:#ecebff;border-radius:16px;padding:18px 20px;line-height:1.75;font-size:14.5px}.pn h4{margin:0 0 4px;color:#ff4fa3;font-size:16px}.pn h5{margin:10px 0 2px;color:#3ee6ff;font-size:14px}.pn ul{margin:0;padding-left:20px}.pn small{color:#9a96c8}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px}.vs div{border-radius:14px;padding:13px 15px;line-height:1.65;font-size:14.5px}.bad{background:#fff1f2;border:1px solid #fecdd3}.good{background:#effcf4;border:1px solid #bbf7d0}.vs b{display:block;font-size:13px;margin-bottom:4px}
+.quiz{display:grid;gap:10px}.q{border:1px solid #dce2f0;border-radius:14px;padding:14px}.q p{margin:0 0 8px}.q button{margin:4px 6px 0 0;padding:8px 12px;font-size:14px}.q .ans{display:none;margin-top:10px}.q.open .ans{display:block}
+.stars{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.stars div{background:#f4f6fc;border-radius:12px;padding:10px;text-align:center;font-size:13.5px;line-height:1.5}.stars b{display:block;color:#e8a400;font-size:16px;letter-spacing:1px}
+.res{margin-top:10px;display:grid;gap:6px}.res div{border-radius:10px;padding:8px 12px;font-size:14px}.res .ok{background:#effcf4;color:#166534}.res .no{background:#fff7ed;color:#9a3412}
+@media(max-width:700px){.flow{grid-template-columns:repeat(2,1fr)}.checks,.two,.vs{grid-template-columns:1fr}.stars{grid-template-columns:1fr 1fr}.wrap{padding:12px 10px 40px}.hero{padding:24px}.panel{padding:17px}}@media print{body{background:white}.panel{box-shadow:none;break-inside:avoid}.btn{display:none}}</style></head>
+<body><main class="wrap">
+<header class="hero"><span class="pill">AI 게임 만들기 동아리 · 5주차</span><h1>🚀 내 게임, 세상에 내놓기</h1><p>4주차 게임을 <b>완성 버전</b>으로 다듬어 올리고, 무엇이 바뀌었는지 <b>패치노트</b>로 알려요.<br>그리고 친구들 게임을 직접 플레이하고 <b>플레이 소감과 댓글</b>을 주고받아요.</p></header>
+
+<section class="panel"><div class="heading"><h2>① 오늘의 흐름</h2><span class="tag">사이트 5주차 작성하기 화면의 🚀 상자</span></div>
+<div class="flow"><div><b>📥</b>4주차 게임 불러오기</div><div><b>🔍</b>출시 전 점검 · 보완 목록</div><div><b>🤖</b>Gemini에서 이어 만들기</div><div><b>🛠</b>하나씩 요청하기</div><div><b>📜</b>패치노트 받기</div><div><b>🚀</b>완성 버전 올리기</div><div><b>💬</b>친구 게임 플레이 · 소감</div></div>
+<p class="muted small" style="margin:12px 0 0">게임 코드는 다시 처음부터 만들지 않아요. <b>지금 올라가 있는 ver2 코드에서 이어서</b> 고쳐야 그동안 고친 것이 사라지지 않아요.</p></section>
+
+<section class="panel"><div class="heading"><h2>② "완성된 게임"이란?</h2><span class="tag">출시 전 점검</span></div>
+<p class="muted">친구가 <b>설명을 하나도 듣지 않고</b> 링크만 받아도 끝까지 할 수 있으면 완성이에요. 내 게임에 있는 것을 눌러 보세요.</p>
+<div class="checks" id="checks"></div>
+<div class="meter"><i id="meter"></i></div><p class="muted small" id="meterTxt" style="margin:0"></p></section>
+
+<section class="panel"><div class="heading"><h2>③ 패치노트란?</h2><span class="tag">버전마다 쓰는 변경 기록</span></div>
+<p class="muted">게임 회사는 업데이트할 때마다 <b>무엇이 새로 생기고, 무엇이 바뀌고, 어떤 버그를 고쳤는지</b>를 플레이어에게 알려요. 이 글을 <b>패치노트</b>라고 해요. 플레이어는 패치노트를 보고 "아, 이번엔 이게 달라졌구나" 하고 다시 게임을 해 봐요.</p>
+<div class="two">
+<div class="pn"><h4>🛠 패치노트 · 게임 ver3</h4><small>예시 게임: 떨어지는 별 피하기</small>
+<h5>✨ 새로 추가</h5><ul><li>시작 화면에 조작법 그림(← → 이동, Space 대시)을 넣었어요</li><li>최고 점수를 기억해서 게임오버 화면에 보여 줘요</li></ul>
+<h5>🔧 바뀐 점</h5><ul><li>처음 10초 동안 별이 떨어지는 속도를 3 → 2로 줄였어요</li><li>목숨 하트를 화면 왼쪽 위로 옮겨서 더 잘 보여요</li></ul>
+<h5>🐞 고친 버그</h5><ul><li>다시 하기를 누르면 점수가 0으로 돌아가지 않던 문제를 고쳤어요</li></ul>
+<h5>⚠️ 아직 남은 문제</h5><ul><li>화면 가장자리에서 대시하면 가끔 벽에 끼어요</li></ul></div>
+<div><h3>패치노트 4칸</h3>
+<p class="muted"><b>✨ 새로 추가</b> 없던 기능이 생겼어요<br><b>🔧 바뀐 점</b> 있던 것을 바꿨어요 (숫자가 바뀌면 숫자도: <b>3 → 2</b>)<br><b>🐞 고친 버그</b> 원래대로 동작하지 않던 것을 고쳤어요<br><b>⚠️ 아직 남은 문제</b> 알고 있지만 못 고친 것 — 숨기지 않고 쓰는 게 멋진 개발자예요</p>
+<div class="notice small">💡 패치노트는 Gemini에게 받아도 돼요(🚀 5단계). 다만 <b>내가 실제로 해 보고 확인한 것만</b> 남기고, 친구가 이해할 수 있는 말로 고쳐요.</div></div></div>
+<h3 style="margin-top:20px">아쉬운 패치노트 vs 좋은 패치노트</h3>
+<div class="vs"><div class="bad"><b>😕 무엇이 바뀐 건지 모르겠어요</b>버그 고침</div><div class="good"><b>🙂 어떤 상황이 어떻게 바뀌었는지 보여요</b>다시 하기를 누르면 점수가 0으로 돌아가지 않던 문제를 고쳤어요</div>
+<div class="bad">난이도 조절함</div><div class="good">처음 10초 동안 별 속도를 3 → 2로 줄여서 처음 하는 사람도 적응할 수 있어요</div>
+<div class="bad">UI 수정</div><div class="good">목숨 하트를 화면 왼쪽 위로 옮기고 크기를 2배로 키웠어요</div></div></section>
+
+<section class="panel"><div class="heading"><h2>④ 연습 · 더 좋은 패치노트 문장 고르기</h2><span class="tag">눌러서 확인</span></div><div class="quiz" id="quiz"></div></section>
+
+<section class="panel"><div class="heading"><h2>⑤ 좋은 플레이 소감 쓰는 법</h2><span class="tag">게임 페이지 맨 아래 💬 칸</span></div>
+<p class="muted">소감은 <b>만든 친구가 다음 버전을 고칠 수 있게 도와주는 선물</b>이에요. 세 가지를 남겨요.</p>
+<div class="vs"><div class="good"><b>👍 좋았던 점 — 어떤 순간이, 왜</b>적이 점점 빨라져서 마지막 10초가 정말 긴장됐어요. 아슬아슬하게 피할 때 짜릿했어요.</div><div class="bad"><b>😕 이렇게만 쓰면 무엇이 좋았는지 몰라요</b>재밌어요! 굿굿</div>
+<div class="good"><b>💡 아쉬운 점 · 제안 — 무엇을, 어떻게</b>처음엔 Space가 대시인 줄 몰라서 금방 죽었어요. 시작 화면에 키 그림이 있으면 좋겠어요.</div><div class="bad"><b>😕 기분만 있고 고칠 방법이 없어요</b>너무 어려워요. 별로예요.</div></div>
+<h3 style="margin-top:18px">⭐ 별점 기준</h3>
+<div class="stars"><div><b>★☆☆☆☆</b>끝까지 하기 어려웠어요</div><div><b>★★☆☆☆</b>아이디어는 좋은데 고칠 곳이 많아요</div><div><b>★★★☆☆</b>끝까지 할 수 있고 재미있는 순간이 있어요</div><div><b>★★★★☆</b>또 하고 싶어요</div><div><b>★★★★★</b>친구에게 추천하고 싶어요</div></div>
+<h3 style="margin-top:18px">✍️ 내 소감 미리 점검해 보기</h3>
+<label for="good" style="margin-top:6px">👍 좋았던 점</label><textarea class="field" id="good" placeholder="어떤 순간이 왜 재미있었나요?"></textarea>
+<label for="idea">💡 아쉬운 점 · 제안</label><textarea class="field" id="idea" placeholder="무엇을, 어떻게 바꾸면 더 좋을까요?"></textarea>
+<div class="res" id="res"></div>
+<div class="notice small" style="margin-top:14px">🙅 <b>하지 않아요</b>: 실명·학번 쓰기, 만든 친구를 놀리거나 비난하기, 장난 소감 · 같은 말 여러 번 올리기. 소감은 <b>모두에게 공개</b>되고 내 저장소에 기록돼요.</div></section>
+
+<section class="panel"><div class="heading"><h2>⑥ 받은 소감에 답글 달기</h2><span class="tag">만든 사람이 할 일</span></div>
+<p class="muted">내 게임에 소감이 달리면 <b>💬 답글</b>로 고마움과 계획을 알려 줘요. 모든 제안을 다 반영할 필요는 없어요. 내 게임의 재미와 맞는지 생각해 보고, 개발일지 6️⃣에 <b>⭕ 반영 / 🤔 고민 / ❌ 이번엔 안 함</b>을 골라요.</p>
+<div class="box">예) 고마워! 조작법을 몰랐다는 말 듣고 놀랐어 😅 다음 버전에서 시작 화면에 키 그림을 넣어 볼게.
+예) 좋은 생각이야! 그런데 이 게임은 '좁은 길'이 재미라서 길을 넓히는 대신 처음 10초만 느리게 해 볼게.</div></section>
+
+<p class="footer">온고 게임제작반 2026 · 5주차 자료</p>
+</main>
+<script>
+const CHECKS=[["▶️ 시작 화면","제목 · 조작법 · 시작 버튼"],["🎯 목표가 보여요","무엇을 하면 이기는지"],["🎮 바로 조작돼요","클릭 없이도 키가 먹혀요"],["🔢 정보 표시","점수 · 시간 · 목숨"],["🏆 클리어 화면","이겼다는 게 보여요"],["💥 게임오버 화면","결과와 다시 하기"],["🔁 다시 하기","처음과 똑같이 시작"],["⚖️ 알맞은 난이도","처음 1분은 적응할 수 있게"],["🐞 버그 없음","멈춤 · 끼임 · 겹침 없음"]];
+const ck=document.getElementById("checks"),on=new Set();
+ck.innerHTML=CHECKS.map((c,i)=>`<button class="chk" data-i="${i}"><b>${c[0]}</b><small>${c[1]}</small></button>`).join("");
+const upd=()=>{const n=on.size;document.getElementById("meter").style.width=(n/CHECKS.length*100)+"%";document.getElementById("meterTxt").textContent=n===CHECKS.length?"🎉 9개 모두! 친구에게 보여 줄 준비가 됐어요.":`${n} / ${CHECKS.length} · 빠진 것은 이번 주 보완 목록(개발일지 2️⃣)에 넣어요.`;};
+ck.onclick=e=>{const b=e.target.closest(".chk");if(!b)return;const i=+b.dataset.i;on.has(i)?on.delete(i):on.add(i);b.classList.toggle("on");upd();};upd();
+const Q=[["점프를 바꿨어요. 어느 쪽이 더 좋은 패치노트일까요?","점프 수정함","점프 높이를 1.5배로 올려서 2칸짜리 장애물도 넘을 수 있어요",1,"얼마나, 그래서 무엇이 가능해졌는지 보여요."],["버그를 고쳤어요.","게임오버 후 다시 하기를 누르면 적이 2배로 나오던 문제를 고쳤어요","버그 몇 개 고침",0,"어떤 상황에서 생긴 문제인지 알 수 있어야 친구가 확인해 볼 수 있어요."],["아직 못 고친 게 있어요.","(안 쓰고 넘어간다)","⚠️ 아직 남은 문제: 화면 오른쪽 끝에서 가끔 캐릭터가 사라져요",1,"알려진 문제를 미리 쓰면 친구가 버그를 만나도 당황하지 않고, 믿음이 생겨요."]];
+document.getElementById("quiz").innerHTML=Q.map((q,i)=>`<div class="q" id="q${i}"><p><b>Q${i+1}.</b> ${q[0]}</p><button class="btn secondary" data-q="${i}" data-a="0">A. ${q[1]}</button><button class="btn secondary" data-q="${i}" data-a="1">B. ${q[2]}</button><div class="ans notice small"></div></div>`).join("");
+document.getElementById("quiz").onclick=e=>{const b=e.target.closest("[data-q]");if(!b)return;const q=Q[+b.dataset.q],box=document.getElementById("q"+b.dataset.q),ok=+b.dataset.a===q[3];box.classList.add("open");box.querySelector(".ans").innerHTML=(ok?"⭕ 맞아요! ":"🤔 다시 생각해 봐요. 정답은 "+(q[3]?"B":"A")+". ")+q[4];};
+const g=document.getElementById("good"),d=document.getElementById("idea"),res=document.getElementById("res");
+const chk=()=>{const a=g.value.trim(),b=d.value.trim(),L=[];
+ if(!a&&!b){res.innerHTML="";return;}
+ L.push([a.length>=20,a.length>=20?"👍 좋았던 점을 한 문장 넘게 썼어요":"👍 좋았던 점을 조금 더 길게 (어떤 순간이 왜?)"]);
+ {const ok=!/^(재밌|재미있|굿|좋아|최고|ㅋ)/.test(a)||a.length>=25;L.push([ok,ok?"👍 '재밌어요'에서 멈추지 않았어요":"👍 '재밌어요' 다음에 무엇이 왜 재밌었는지 이어 써 봐요"]);}
+ L.push([/때|순간|마지막|처음|할 때|피할|먹을|부딪|점프|적|보스|아이템|점수|속도/.test(a),/때|순간|마지막|처음|할 때|피할|먹을|부딪|점프|적|보스|아이템|점수|속도/.test(a)?"🎬 게임 속 장면이나 요소를 짚었어요":"🎬 게임 속 장면·요소(적, 점프, 아이템, 마지막 10초 …)를 넣어 봐요"]);
+ L.push([!b||/(면|게|도록).{0,8}(좋겠|어때|좋을)|바꾸|넣|줄이|늘리|옮기/.test(b),!b?"💡 제안은 선택이에요":/(면|게|도록).{0,8}(좋겠|어때|좋을)|바꾸|넣|줄이|늘리|옮기/.test(b)?"💡 어떻게 바꾸면 좋을지 방법이 있어요":"💡 '~하면 좋겠어요'처럼 바꾸는 방법도 써 봐요"]);
+ L.push([!/(별로|노잼|구려|최악|못 ?만들)/.test(a+b),!/(별로|노잼|구려|최악|못 ?만들)/.test(a+b)?"🤝 친구를 존중하는 말투예요":"🤝 '별로, 노잼' 대신 무엇이 아쉬웠는지로 바꿔 봐요"]);
+ res.innerHTML=L.map(x=>`<div class="${x[0]?"ok":"no"}">${x[0]?"✅":"✏️"} ${x[1]}</div>`).join("");};
+g.oninput=d.oninput=chk;
+</script></body></html>

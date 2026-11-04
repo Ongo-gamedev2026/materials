@@ -42,8 +42,13 @@
     },
     {
       "week": 5,
-      "title": "동료 피드백 및 플레이테스트",
-      "files": []
+      "title": "게임 완성하고 올리기 · 플레이 소감",
+      "files": [
+        {
+          "name": "5주차 자료 · 패치노트와 플레이 소감 쓰는 법",
+          "file": "patchnote_review_week5.html"
+        }
+      ]
     },
     {
       "week": 6,
