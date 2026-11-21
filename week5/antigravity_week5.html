@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI 게임 만들기 | 5주차 자료 · Antigravity로 내 게임 더 만들기</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><style>:root{font-family:'Pretendard','Noto Sans KR',system-ui,sans-serif;color:#243047;background:#f5f7ff}*{box-sizing:border-box}body{margin:0}.wrap{max-width:950px;margin:auto;padding:28px 18px 70px}.hero{background:linear-gradient(120deg,#6159d9,#478bd7);color:white;border-radius:24px;padding:32px}.hero h1{font-size:clamp(26px,4vw,38px);margin:10px 0}.hero p{margin:0;line-height:1.7}.pill{display:inline-block;background:#ffffff30;padding:6px 12px;border-radius:50px;font-size:13px}.panel{background:white;border:1px solid #e2e6f3;border-radius:20px;padding:24px;margin-top:18px;box-shadow:0 5px 18px #263c6710}h2{font-size:21px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}.muted{color:#65718a;line-height:1.65}.small{font-size:13px}.tag{font-size:12px;background:#e9edff;color:#4b54a7;border-radius:99px;padding:5px 10px}.heading{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.box{background:#f4f6fc;border-radius:13px;padding:16px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere}.field{width:100%;border:1px solid #cdd5e5;border-radius:12px;padding:13px;font:inherit;resize:vertical;line-height:1.6}textarea{min-height:90px}.btn{background:#6258d8;border:0;border-radius:12px;color:white;padding:12px 17px;font:inherit;font-weight:700;cursor:pointer}.btn.secondary{background:white;border:1px solid #c9cce6;color:#514bb1}.actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:12px}.notice{background:#fff9e7;border:1px solid #f0dc9e;border-radius:12px;padding:14px;line-height:1.7}.footer{text-align:center;color:#6d7790;font-size:12px;margin-top:24px}a{color:#5147c3}label{display:block;font-weight:700;margin:15px 0 8px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;counter-reset:s}.flow div{background:#f4f6fc;border-radius:14px;padding:12px 8px;text-align:center;font-size:13.5px;line-height:1.45;position:relative}.flow div b{display:block;font-size:24px;margin-bottom:4px}.flow div::before{counter-increment:s;content:counter(s);position:absolute;top:6px;left:8px;font-size:11px;font-weight:800;color:#6258d8}
+.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.chk{border:1px solid #dce2f0;border-radius:14px;padding:12px 14px;cursor:pointer;background:white;text-align:left;font:inherit;line-height:1.5}.chk b{display:block;margin-bottom:3px}.chk small{color:#65718a}.chk.on{border:2px solid #22a35a;background:#effcf4}.chk.on b::after{content:" ✅"}.meter{height:12px;background:#e9edff;border-radius:99px;overflow:hidden;margin:14px 0 6px}.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6258d8,#22a35a);transition:width .3s}
+.pn{background:#151233;color:#ecebff;border-radius:16px;padding:18px 20px;line-height:1.75;font-size:14.5px}.pn h4{margin:0 0 4px;color:#ff4fa3;font-size:16px}.pn h5{margin:10px 0 2px;color:#3ee6ff;font-size:14px}.pn ul{margin:0;padding-left:20px}.pn small{color:#9a96c8}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px}.vs div{border-radius:14px;padding:13px 15px;line-height:1.65;font-size:14.5px}.bad{background:#fff1f2;border:1px solid #fecdd3}.good{background:#effcf4;border:1px solid #bbf7d0}.vs b{display:block;font-size:13px;margin-bottom:4px}
+.quiz{display:grid;gap:10px}.q{border:1px solid #dce2f0;border-radius:14px;padding:14px}.q p{margin:0 0 8px}.q button{margin:4px 6px 0 0;padding:8px 12px;font-size:14px}.q .ans{display:none;margin-top:10px}.q.open .ans{display:block}
+.stars{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.stars div{background:#f4f6fc;border-radius:12px;padding:10px;text-align:center;font-size:13.5px;line-height:1.5}.stars b{display:block;color:#e8a400;font-size:16px;letter-spacing:1px}
+.res{margin-top:10px;display:grid;gap:6px}.res div{border-radius:10px;padding:8px 12px;font-size:14px}.res .ok{background:#effcf4;color:#166534}.res .no{background:#fff7ed;color:#9a3412}
+@media(max-width:700px){.flow{grid-template-columns:repeat(2,1fr)}.checks,.two,.vs{grid-template-columns:1fr}.stars{grid-template-columns:1fr 1fr}.wrap{padding:12px 10px 40px}.hero{padding:24px}.panel{padding:17px}}@media print{body{background:white}.panel{box-shadow:none;break-inside:avoid}.btn{display:none}}
+.steps{margin:0;padding-left:22px;line-height:1.85}.steps li{margin:4px 0}.steps code,.muted code,.box code{background:#e9edff;border-radius:6px;padding:1px 6px;font-size:13.5px}.req{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.req div{background:#f4f6fc;border-radius:14px;padding:14px;line-height:1.6;font-size:14.5px}.req b{display:block;font-size:22px;margin-bottom:4px}.folder{background:#151233;color:#ecebff;border-radius:14px;padding:16px 18px;font-family:ui-monospace,Consolas,monospace;font-size:14px;line-height:1.8}.folder i{color:#9a96c8;font-style:normal}.faq details{border:1px solid #dce2f0;border-radius:12px;padding:12px 14px;margin:8px 0;background:white}.faq summary{cursor:pointer;font-weight:700}.faq p{margin:8px 0 0;line-height:1.7}.rule{display:grid;gap:8px}.rule div{background:#f4f6fc;border-radius:12px;padding:11px 14px;line-height:1.6}@media(max-width:700px){.req{grid-template-columns:1fr}}</style></head>
+<body><main class="wrap">
+<header class="hero"><span class="pill">AI 게임 만들기 동아리 · 5주차 2부</span><h1>🛸 Antigravity로 내 게임 더 만들기</h1><p>1부에서 Gemini로 멘토 피드백을 반영해 게임을 보완했어요.<br>이제 <b>내 컴퓨터의 게임 폴더</b>를 AI 에이전트에게 맡겨서, <b>기획서</b>를 보고 게임을 더 완성해요.</p></header>
+
+<section class="panel"><div class="heading"><h2>① 오늘의 흐름</h2><span class="tag">사이트 5주차 작성하기 화면의 🚀 상자 7~10단계</span></div>
+<div class="flow" style="grid-template-columns:repeat(6,1fr)"><div><b>🤖</b>1부 Gemini 보완 · 중간 저장</div><div><b>⬇️</b>Antigravity 설치 · 로그인</div><div><b>📁</b>게임 폴더 만들기</div><div><b>💬</b>프롬프트 보내고 제안 고르기</div><div><b>🎮</b>직접 해 보고 고치기</div><div><b>📜</b>패치노트 → 다음 버전 올리기</div></div>
+<p class="muted small" style="margin:12px 0 0">1부에서 <b>원하는 게임이 나온 다음에</b> 2부를 시작해요. 1부 결과를 먼저 올려 두면(예: ver3), 2부가 잘 안 돼도 제출한 게임이 남아요.</p></section>
+
+<section class="panel"><div class="heading"><h2>② Antigravity는 뭐가 달라요?</h2><span class="tag">Gemini vs Antigravity</span></div>
+<div class="vs"><div class="bad" style="background:#f4f6fc;border-color:#dce2f0"><b>🤖 Gemini (1부)</b>내가 묻고 → Gemini가 코드를 보여 주고 → 내가 복사해서 붙여 넣어요.<br>대화 한 번에 한 가지씩 고치기 좋아요.</div>
+<div class="good"><b>🛸 Antigravity (2부)</b>내 컴퓨터 폴더 안의 파일을 <b>에이전트가 직접 읽고, 고치고, 실행해서 확인</b>해요.<br>먼저 계획을 보여 주고, 내가 고르면 그대로 일해요.</div></div>
+<p class="muted" style="margin:12px 0 0">에이전트(agent)는 "시키면 스스로 여러 단계를 해내는 AI"예요. 그래서 <b>무엇을 맡길지 내가 정하고, 하는 일을 확인하는 것</b>이 중요해요.</p></section>
+
+<section class="panel"><div class="heading"><h2>③ 준비물</h2><span class="tag">설치 전에 확인</span></div>
+<div class="req"><div><b>💻</b><b style="font-size:15px">내 컴퓨터</b>Windows 10 (64비트) 이상, 또는 macOS 12 이상<br><span class="small muted">인텔(x86) 맥은 안 돼요</span></div><div><b>🌐</b><b style="font-size:15px">Chrome</b>에이전트가 게임을 열어 확인할 때 써요</div><div><b>📧</b><b style="font-size:15px">개인 Gmail 계정</b>학교·회사 계정이 아닌 개인 계정으로 로그인해요</div></div>
+<p class="notice" style="margin:14px 0 0">⚠️ 학교 컴퓨터는 설치 권한이 없을 수 있어요. 설치가 막히면 억지로 하지 말고 <b>선생님께 알려 주세요.</b></p></section>
+
+<section class="panel"><div class="heading"><h2>④ 설치하고 로그인하기</h2><span class="tag">처음 한 번만 · 5~10분</span></div>
+<ol class="steps">
+<li><a href="https://antigravity.google/download" target="_blank" rel="noopener">antigravity.google/download ↗</a>에 들어가 내 컴퓨터에 맞는 설치 파일을 받아요. (Windows는 <code>.exe</code>, 맥은 <code>.dmg</code>)</li>
+<li>설치 파일을 실행해요. Windows에서 <b>"PC 보호"</b> 파란 창이 뜨면 <b>추가 정보 → 실행</b>을 눌러요.</li>
+<li>설치가 끝나면 Antigravity를 열고 <b>Google로 계속하기</b>를 눌러 개인 Gmail 계정으로 로그인해요.</li>
+<li>브라우저에서 로그인을 마치면 <b>Antigravity 열기</b>를 눌러 앱으로 돌아와요.</li>
+<li>테마를 고르고 약관을 읽은 뒤 <b>수락 → 완료</b>를 눌러요. 다른 설정은 기본값 그대로 두면 돼요.</li>
+<li><b>Antigravity IDE 설치</b> 버튼이 보여도 오늘은 설치하지 않아도 돼요.</li>
+</ol></section>
+
+<section class="panel"><div class="heading"><h2>⑤ 내 게임 폴더 만들고 프로젝트로 열기</h2><span class="tag">사이트 8단계</span></div>
+<div class="two"><div><ol class="steps">
+<li>바탕 화면에 <b>영어 이름</b> 폴더를 만들어요. (예: <code>my-game</code>)</li>
+<li>사이트 5주차 🚀 상자 <b>8단계 💾 game.html · 기획서.md 내려받기</b>를 눌러요.</li>
+<li>다운로드 폴더에 생긴 두 파일을 <code>my-game</code> 폴더로 옮겨요.</li>
+<li>Antigravity 왼쪽 <b>프로젝트</b>에서 <b>새 프로젝트</b>를 만들고 <code>my-game</code> 폴더를 골라요.</li>
+<li><b>첫 번째 대화 시작</b>(또는 <b>새 대화</b>)을 눌러요.</li>
+</ol></div>
+<div><div class="folder">📁 my-game<br>&nbsp;├─ 🎮 game.html <i>← 1부에서 보완한 내 게임</i><br>&nbsp;└─ 📄 기획서.md <i>← 3주차 게임 기획서</i><br><br><i>에이전트가 일하면 이런 파일이 생겨요</i><br>&nbsp;├─ 🗂 game-backup.html <i>← 고치기 전 백업</i><br>&nbsp;└─ 📜 patchnote.txt <i>← 마지막에 받는 패치노트</i></div></div></div>
+<p class="muted small" style="margin:12px 0 0">프로젝트에는 <b>내 게임 폴더만</b> 넣어요. 바탕 화면 전체나 문서 폴더를 통째로 넣지 마세요. 에이전트는 프로젝트에 넣은 폴더 안에서 일해요.</p></section>
+
+<section class="panel"><div class="heading"><h2>⑥ 에이전트에게 맡기기</h2><span class="tag">사이트 9~10단계</span></div>
+<ol class="steps">
+<li>사이트 <b>9단계 📋 Antigravity 프롬프트 복사</b>를 누르고, 대화 칸에 붙여 넣어 보내요.</li>
+<li>에이전트가 <b>기획서 ↔ 지금 게임 비교표</b>와 <b>이어서 만들 것 3가지</b>를 보여 줘요. 읽어 보고 "1번이랑 3번 좋아"처럼 골라요.</li>
+<li>에이전트가 파일을 고치거나 명령을 실행해도 되는지 물어보면, <b>무엇을 하려는지 읽어 보고</b> 허락해요.</li>
+<li>다 되면 폴더의 <code>game.html</code>을 더블클릭해 Chrome에서 직접 해 봐요. 이상한 곳은 <b>하나씩</b> 말해서 고쳐요.</li>
+<li>사이트 <b>10단계 📋 패치노트 요청 프롬프트</b>를 보내면 <code>patchnote.txt</code>가 생겨요.</li>
+<li>사이트 <b>5단계</b>에 patchnote.txt를 올려 개발일지에 반영하고, <b>6단계</b>에서 폴더의 <code>game.html</code>을 골라 <b>다음 버전</b>(예: ver4)으로 올려요.</li>
+</ol>
+<div class="box" style="margin-top:12px">💡 <b>요청 잘하는 법</b>
+· 한 번에 한 가지씩: "손님 대기 시간을 5~12초 사이에서 랜덤으로 바꿔 줘"
+· 숫자로 말하기: "느려" 대신 "속도를 3에서 2로"
+· 결과 알려 주기: "됐어 ✅" / "점프는 되는데 착지할 때 벽에 끼어 🔺"
+· 망가졌으면: "game-backup.html 상태로 되돌려 줘"</div></section>
+
+<section class="panel"><div class="heading"><h2>⑦ 안전하게 쓰는 약속</h2><span class="tag">꼭 지켜요</span></div>
+<div class="rule">
+<div>📁 프로젝트에는 <b>내 게임 폴더만</b> 넣어요.</div>
+<div>👀 허락을 물어보면 <b>읽고 나서</b> 눌러요. 파일·폴더를 <b>지우는 명령</b>이나 무슨 뜻인지 모르는 명령이면 허락하지 말고 선생님께 물어봐요.</div>
+<div>🔒 비밀번호, 열쇠(토큰), 개인 정보는 대화에 절대 넣지 않아요.</div>
+<div>🎯 기획서에 없는 큰 기능을 에이전트가 마음대로 넣으면 "기획서에 있는 것만 해 줘"라고 말해요.</div>
+</div></section>
+
+<section class="panel faq"><div class="heading"><h2>⑧ 잘 안 될 때</h2><span class="tag">자주 묻는 질문</span></div>
+<details><summary>로그인이 안 돼요</summary><p>학교·회사 계정이 아니라 <b>개인 Gmail 계정</b>으로 로그인했는지 확인해요. 그래도 안 되면 선생님께 알려 주세요.</p></details>
+<details><summary>"사용량을 다 썼다"는 메시지가 나와요</summary><p>무료로 쓸 수 있는 양에는 한도가 있어요. 잠시 기다렸다가 다시 하거나, 남은 수정은 1부처럼 <b>Gemini</b>에서 이어서 해요.</p></details>
+<details><summary>에이전트가 게임을 처음부터 새로 만들어 버렸어요</summary><p>"game-backup.html로 되돌리고, 지금 게임에서 이어서 고쳐 줘. 새로 만들지 마"라고 말해요.</p></details>
+<details><summary>폴더에 game.html이 없어요</summary><p>사이트 6단계에서 1부 게임을 아직 안 올렸다면 8단계 버튼으로 받은 게임이 4주차 ver2일 수 있어요. 6단계 <b>💾 html 내려받기</b>로 받은 파일 이름을 <code>game.html</code>로 바꿔서 폴더에 넣어요.</p></details>
+<details><summary>설치 파일이 실행되지 않아요</summary><p>학교 컴퓨터는 설치가 막혀 있을 수 있어요. 억지로 하지 말고 선생님께 알려 주세요. 오늘은 1부(Gemini) 결과로 제출해도 돼요.</p></details>
+</section>
+
+<p class="footer">AI 게임 만들기 동아리 · 5주차 자료 · Antigravity로 내 게임 더 만들기</p>
+</main></body></html>
