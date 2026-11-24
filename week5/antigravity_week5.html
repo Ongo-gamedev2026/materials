@@ -12,8 +12,8 @@
 <body><main class="wrap">
 <header class="hero"><span class="pill">AI 게임 만들기 동아리 · 5주차 2부</span><h1>🛸 Antigravity로 내 게임 더 만들기</h1><p>1부에서 Gemini로 멘토 피드백을 반영해 게임을 보완했어요.<br>이제 <b>내 컴퓨터의 게임 폴더</b>를 AI 에이전트에게 맡겨서, <b>기획서</b>를 보고 게임을 더 완성해요.</p></header>
 
-<section class="panel"><div class="heading"><h2>① 오늘의 흐름</h2><span class="tag">사이트 5주차 작성하기 화면의 🚀 상자 7~10단계</span></div>
-<div class="flow" style="grid-template-columns:repeat(6,1fr)"><div><b>🤖</b>1부 Gemini 보완 · 중간 저장</div><div><b>⬇️</b>Antigravity 설치 · 로그인</div><div><b>📁</b>게임 폴더 만들기</div><div><b>💬</b>프롬프트 보내고 제안 고르기</div><div><b>🎮</b>직접 해 보고 고치기</div><div><b>📜</b>패치노트 → 다음 버전 올리기</div></div>
+<section class="panel"><div class="heading"><h2>① 오늘의 흐름</h2><span class="tag">사이트 5주차 작성하기 화면의 🚀 상자 7~11단계</span></div>
+<div class="flow"><div><b>🤖</b>1부 Gemini 보완 · 중간 저장</div><div><b>⬇️</b>Antigravity 설치 · 로그인</div><div><b>📁</b>게임 폴더 만들기</div><div><b>💬</b>프롬프트 보내고 제안 고르기</div><div><b>🎮</b>직접 해 보고 고치기</div><div><b>📜</b>패치노트 받아 반영하기</div><div><b>🚀</b>사이트에 다음 버전 올리기</div></div>
 <p class="muted small" style="margin:12px 0 0">1부에서 <b>원하는 게임이 나온 다음에</b> 2부를 시작해요. 1부 결과를 먼저 올려 두면(예: ver3), 2부가 잘 안 돼도 제출한 게임이 남아요.</p></section>
 
 <section class="panel"><div class="heading"><h2>② Antigravity는 뭐가 달라요?</h2><span class="tag">Gemini vs Antigravity</span></div>
@@ -52,8 +52,8 @@
 <li>에이전트가 <b>기획서 ↔ 지금 게임 비교표</b>와 <b>이어서 만들 것 3가지</b>를 보여 줘요. 읽어 보고 "1번이랑 3번 좋아"처럼 골라요.</li>
 <li>에이전트가 파일을 고치거나 명령을 실행해도 되는지 물어보면, <b>무엇을 하려는지 읽어 보고</b> 허락해요.</li>
 <li>다 되면 폴더의 <code>game.html</code>을 더블클릭해 Chrome에서 직접 해 봐요. 이상한 곳은 <b>하나씩</b> 말해서 고쳐요.</li>
-<li>사이트 <b>10단계 📋 패치노트 요청 프롬프트</b>를 보내면 <code>patchnote.txt</code>가 생겨요.</li>
-<li>사이트 <b>5단계</b>에 patchnote.txt를 올려 개발일지에 반영하고, <b>6단계</b>에서 폴더의 <code>game.html</code>을 골라 <b>다음 버전</b>(예: ver4)으로 올려요.</li>
+<li>사이트 <b>10단계 📋 패치노트 요청 프롬프트</b>를 보내면 폴더에 <code>patchnote.txt</code>가 생겨요.</li>
+<li>같은 <b>10단계</b>에서 <b>📄 patchnote.txt 올리기</b>를 눌러 그 파일을 골라요. (또는 에이전트가 보여 준 글을 복사해 붙여 넣고 <b>✍️ 반영하기</b>) 개발일지 <b>4️⃣ 패치노트 · 5️⃣ 게임 소개</b>가 채워져요.</li>
 </ol>
 <div class="box" style="margin-top:12px">💡 <b>요청 잘하는 법</b>
 · 한 번에 한 가지씩: "손님 대기 시간을 5~12초 사이에서 랜덤으로 바꿔 줘"
@@ -61,7 +61,20 @@
 · 결과 알려 주기: "됐어 ✅" / "점프는 되는데 착지할 때 벽에 끼어 🔺"
 · 망가졌으면: "game-backup.html 상태로 되돌려 줘"</div></section>
 
-<section class="panel"><div class="heading"><h2>⑦ 안전하게 쓰는 약속</h2><span class="tag">꼭 지켜요</span></div>
+<section class="panel"><div class="heading"><h2>⑦ 내 게임 사이트에 올리기</h2><span class="tag">사이트 11단계 · 꼭 해야 제출돼요</span></div>
+<ol class="steps">
+<li>사이트 🚀 상자 <b>11단계 · Antigravity로 만든 게임 올리기</b>로 가요. (10단계 바로 아래, 12단계 친구 소감 위)</li>
+<li><b>📄 내 게임 폴더의 game.html 고르기</b>를 누르고 <code>my-game</code> 폴더의 <code>game.html</code>을 골라요. <span class="small muted">(<code>game-backup.html</code>은 처음 게임이라 고르지 않아요)</span></li>
+<li><b>▶ 미리 해 보기</b>로 시작 → 플레이 → 클리어/게임오버 → 다시 하기까지 해 봐요.</li>
+<li>🏷️ <b>버전 번호</b>를 확인해요. 1부에서 ver3을 올렸다면 <b>ver4</b>예요.</li>
+<li>그 칸 안의 <b>🛸 Antigravity 게임 올리고 제출하기</b>를 눌러요. 확인 창이 뜨면 읽어 보고 <b>확인</b>을 눌러요.</li>
+<li>"🎉 Antigravity로 만든 완성 게임 ver4를 올리고…"가 나오면 성공! <b>내 게임 페이지 열기</b>를 눌러 <code>5주차 vN · ver4 🛸 Antigravity</code> 버튼이 생겼는지 확인해요.</li>
+</ol>
+<div class="vs" style="margin-top:12px"><div class="bad"><b>❌ 이렇게 하면 게임이 안 올라가요</b>화면 맨 아래 <strong>📮 제출하기</strong>만 누르기<br>→ 개발일지만 제출되고 게임 파일은 그대로예요.</div>
+<div class="good"><b>✅ 이렇게 해요</b>11단계 칸 안의 <strong>🛸 Antigravity 게임 올리고 제출하기</strong><br>→ 게임 · 게임 소개 · 패치노트가 함께 올라가고 5주차로 제출돼요.</div></div>
+<p class="notice" style="margin:14px 0 0">💡 사이트에는 <b>html 파일 하나만</b> 올라가요. 에이전트가 <code>style.css</code> · <code>script.js</code> · 그림 파일을 따로 만들었다면 먼저 <b>"모든 코드를 game.html 하나에 합쳐 줘. 그림은 코드로 그려 줘"</b>라고 요청한 뒤 올려요. 또 고쳐서 올리면 ver5, ver6…으로 계속 올릴 수 있어요.</p></section>
+
+<section class="panel"><div class="heading"><h2>⑧ 안전하게 쓰는 약속</h2><span class="tag">꼭 지켜요</span></div>
 <div class="rule">
 <div>📁 프로젝트에는 <b>내 게임 폴더만</b> 넣어요.</div>
 <div>👀 허락을 물어보면 <b>읽고 나서</b> 눌러요. 파일·폴더를 <b>지우는 명령</b>이나 무슨 뜻인지 모르는 명령이면 허락하지 말고 선생님께 물어봐요.</div>
@@ -69,11 +82,14 @@
 <div>🎯 기획서에 없는 큰 기능을 에이전트가 마음대로 넣으면 "기획서에 있는 것만 해 줘"라고 말해요.</div>
 </div></section>
 
-<section class="panel faq"><div class="heading"><h2>⑧ 잘 안 될 때</h2><span class="tag">자주 묻는 질문</span></div>
+<section class="panel faq"><div class="heading"><h2>⑨ 잘 안 될 때</h2><span class="tag">자주 묻는 질문</span></div>
 <details><summary>로그인이 안 돼요</summary><p><b>학교 Google 계정(edu)</b>을 골랐는지 확인해요. 학교 계정이 막혀 있으면 선생님께 알려 주세요. Google AI 유료 요금제를 쓰는 개인 계정이 있다면 그 계정으로 로그인해도 돼요.</p></details>
 <details><summary>"사용량을 다 썼다"는 메시지가 나와요</summary><p>무료로 쓸 수 있는 양에는 한도가 있어요. 잠시 기다렸다가 다시 하거나, 남은 수정은 1부처럼 <b>Gemini</b>에서 이어서 해요.</p></details>
 <details><summary>에이전트가 게임을 처음부터 새로 만들어 버렸어요</summary><p>"game-backup.html로 되돌리고, 지금 게임에서 이어서 고쳐 줘. 새로 만들지 마"라고 말해요.</p></details>
 <details><summary>폴더에 game.html이 없어요</summary><p>사이트 6단계에서 1부 게임을 아직 안 올렸다면 8단계 버튼으로 받은 게임이 4주차 ver2일 수 있어요. 6단계 <b>💾 html 내려받기</b>로 받은 파일 이름을 <code>game.html</code>로 바꿔서 폴더에 넣어요.</p></details>
+<details><summary>올렸는데 내 게임 페이지에 새 버전이 안 보여요</summary><p>화면 맨 아래 <b>📮 제출하기</b>만 눌렀을 수 있어요. 11단계 칸 안의 <b>🛸 Antigravity 게임 올리고 제출하기</b>를 눌러야 게임이 올라가요. 버튼이 안 보이면 <b>Ctrl + F5</b>로 새로고침해요.</p></details>
+<details><summary>"다른 파일을 함께 써요"라는 창이 떠요</summary><p>게임이 같은 폴더의 다른 파일(css · js · 그림)을 불러 쓰고 있어서, 사이트에 올리면 깨질 수 있어요. 에이전트에게 <b>"모든 코드를 game.html 하나에 합쳐 줘"</b>라고 요청하고 다시 골라요.</p></details>
+<details><summary>"패치노트가 비어 있어요"라는 창이 떠요</summary><p>10단계에서 patchnote.txt를 아직 반영하지 않았어요. 먼저 반영하면 게임 페이지에 무엇이 바뀌었는지 함께 보여요.</p></details>
 <details><summary>설치 파일이 실행되지 않아요</summary><p>학교 컴퓨터는 설치가 막혀 있을 수 있어요. 억지로 하지 말고 선생님께 알려 주세요. 오늘은 1부(Gemini) 결과로 제출해도 돼요.</p></details>
 </section>
 
